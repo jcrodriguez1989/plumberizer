@@ -1,0 +1,39 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+library("plumberizer")
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# `{plumberizer}`
+
+## Installation
+
+Install the development version from [GitHub](https://github.com/jcrodriguez1989/plumberizer) with:
+
+```{r eval = FALSE}
+# install.packages("remotes")
+remotes::install_github("jcrodriguez1989/plumberizer")
+```
+
+## Usage
+
+`{plumberizer}`'s main function is `plumberize`, call it with the package that you need to generate
+a Plumber API configuration file, and it will build it for you:
+
+```{r, eval=FALSE}
+plumberizer::plumberize("chatgpt")
+```
+
+```{r, echo=FALSE, results='asis'}
+cat(paste0("```\n", plumberizer::plumberize("chatgpt"), "\n```"))
+```

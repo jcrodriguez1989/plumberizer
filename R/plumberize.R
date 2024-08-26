@@ -18,8 +18,5 @@ plumberize <- function(package_name, out_file = NULL) {
   }
   exports <- sort(getNamespaceExports(package_name))
   funs_plumber <- paste(sapply(exports, plumberize_function), collapse = "\n\n")
-  paste0(
-    'library("plumber")\n\n',
-    funs_plumber
-  )
+  paste0('library("plumber")\n\n', funs_plumber)
 }

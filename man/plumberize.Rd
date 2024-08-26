@@ -4,11 +4,14 @@
 \alias{plumberize}
 \title{Plumberize}
 \usage{
-plumberize(package_name)
+plumberize(package_name, out_file = NULL)
 }
 \arguments{
 \item{package_name}{A string with the name of the package for which to generate the API.
 The package should be installed. E.g., `plumberize("chatgpt")`.}
+
+\item{out_file}{The name of the file where to save the `plumber.R` code. If `NULL` it will
+return it as a string.}
 }
 \description{
 Generate the `plumber.R` file for any package. The `plumber.R` file is the configuration file
