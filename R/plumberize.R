@@ -12,7 +12,6 @@
 #' @export
 #'
 plumberize <- function(package_name, out_file = NULL) {
-  package_name <- "chatgpt"
   if (!require(package_name, character.only = TRUE, quietly = TRUE)) {
     stop("Package {", package_name, "} is not installed")
   }
