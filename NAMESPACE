@@ -2,3 +2,4 @@
 
 export(plumberize)
 importFrom(glue,glue)
+importFrom(utils,help)

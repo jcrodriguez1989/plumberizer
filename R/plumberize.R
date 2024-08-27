@@ -21,5 +21,9 @@ plumberize <- function(package_name, out_file = NULL) {
   )
   exports <- sort(getNamespaceExports(package_name))
   functions_plumber <- paste(sapply(exports, plumberize_function), collapse = "\n\n")
-  glue(plumber_skeleton, .open = "{{", .close = "}}")
+  plumber_code <- glue(plumber_skeleton, .open = "{{", .close = "}}")
+  if (!is.null(out_file)) {
+    writeLines(plumber_code, out_file)
+  }
+  invisible(plumber_code)
 }
