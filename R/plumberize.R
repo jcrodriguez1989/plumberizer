@@ -15,7 +15,11 @@ plumberize <- function(package_name, out_file = NULL) {
   if (!require(package_name, character.only = TRUE, quietly = TRUE)) {
     stop("Package {", package_name, "} is not installed")
   }
+  plumber_skeleton <- paste(
+    readLines(system.file("plumberizer", "plumber_skeleton.R", package = "plumberizer")),
+    collapse = "\n"
+  )
   exports <- sort(getNamespaceExports(package_name))
-  funs_plumber <- paste(sapply(exports, plumberize_function), collapse = "\n\n")
-  paste0('library("plumber")\n\n', funs_plumber)
+  functions_plumber <- paste(sapply(exports, plumberize_function), collapse = "\n\n")
+  glue(plumber_skeleton, .open = "{{", .close = "}}")
 }
