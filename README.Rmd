@@ -31,9 +31,9 @@ remotes::install_github("jcrodriguez1989/plumberizer")
 a Plumber API configuration file, and it will build it for you:
 
 ```{r, eval=FALSE}
-plumberizer::plumberize("chatgpt")
+plumberizer::plumberize("emoji")
 ```
 
 ```{r, echo=FALSE, results='asis'}
-cat(paste0("```\n", plumberizer::plumberize("chatgpt"), "\n```"))
+cat(paste0("```\n", plumberizer::plumberize("emoji"), "\n```"))
 ```
