@@ -23,7 +23,10 @@ plumberize <- function(package_name, out_file = NULL) {
   functions_plumber <- paste(sapply(exports, plumberize_function), collapse = "\n\n")
   plumber_code <- glue(plumber_skeleton, .open = "{{", .close = "}}")
   if (!is.null(out_file)) {
+    # Delete the file if it exists already.
+    unlink(out_file)
     writeLines(plumber_code, out_file)
+    return(invisible(out_file))
   }
   invisible(plumber_code)
 }
