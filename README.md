@@ -13,6 +13,24 @@ Install the development version from
 remotes::install_github("jcrodriguez1989/plumberizer")
 ```
 
+## Useful examples:
+
+We’ll show with the [`{emoji}` R
+package](https://cran.r-project.org/web/packages/emoji/index.html), so
+install it first `install.packages("emoji")`.
+
+Generate the plumber file for any installed package:
+
+``` r
+file.edit(plumberizer::plumberize("emoji", "/tmp/emoji_plumber.R"))
+```
+
+Run a REST API for any installed package:
+
+``` r
+plumber::plumb(plumberizer::plumberize("emoji", "/tmp/emoji_plumber.R"))$run()
+```
+
 ## Usage
 
 `{plumberizer}`’s main function is `plumberize`, call it with the
